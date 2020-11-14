@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ judulhalaman}}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdnv9.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+<style>
+  body {
+    background-image: url('');
+    color: white;
+    background-size: cover;
+  }
+  </style>
+</head>
+<body>  
+     <style>
+       body {
+           background-image: url('https://steamuserimages-a.akamaihd.net/ugc/80339917950222998/8B04E80E405A50648D52ADB3618FADA25840B0ED/');
+       }
+           
+       
+    </style>
+    
+      <nav class="navbar navbar-light bg-dark">
+<a href="/">LOGIN</a>
+<a href="/user">DATA PEMAIN</a>
+  <a href="/pembelian">IDENTITAS DIRI</a>
+  <a href="/logout">LOG OUT</a>
+  <form class="form-inline">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  </form>
+</nav>
+<center>
+<h1 align="center">DATA PEMAIN</h1>    
+ <form  action="/user" method="POST">
+    <input type="text" name="inputnama" placeholder="NAMA">
+    <input type="text" name="inputemail" placeholder="EMAIL">
+    <input type="text" name="inputpassword" placeholder="PASSWORD">
+     <button type="submit"> KENA TIPU!</button>
+    </form>
+    <br/>
+    </center>
+    <table class="table table-hover text-white">
+        <thead>
+            <tr>
+                <th>NAMA</th>
+                <th>EMAIL</th>
+                <th>PASSWORD</th>
+                <th>HAPUS</th>
+            </tr>
+        </thead>
+        <tbody class="table table-active text-white">
+            {{#each data}}
+            <tr>
+                <td>{{ nama }}</td>
+                 <td>{{ email }}</td>
+                <td>{{ password }}</td>
+                 <td><a href="/hapus-nama/{{ nama }}"><button>HAPUS!</button></a></td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+LANJUT KE PEMBELIAN
+</button>
+
+<div class="modal fade text-dark" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+       <form action="/pembelian" method="POST"> 
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">INPUT DATA PEMAIN</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <p align="center">APAKAH ANDA INGIN MELANJUTKAN KE PEMBELIAN?</p>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">TIDAK</button>
+        <button type="submit" class="btn btn-primary">YA</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+</body>
+</html>
